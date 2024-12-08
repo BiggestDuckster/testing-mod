@@ -1,0 +1,107 @@
+{
+  // Basic information
+  "type": "ContinuousTurret",
+  "name": "Billy",
+  "description": "He loves his apples.",
+  
+  // Turret stats
+  "size": 5, // Size in tiles (1x1 by default)
+  "health": 999999999, // Turret health
+  "range": 224, // Range in units (default 8 per block, so 8 blocks = 64)
+  "rotateSpeed": 0.8, // Rotation speed of the turret
+  "recoil": 1.5, // Recoil when firing
+  "shake": 1, // Screen shake when firing
+  "warmupMaintainTime": 180,
+  "smokeEffect": ["ballfire", "artilleryTrailSmoke", "blastsmoke"],
+  "turretLayer": 50,
+  "outline": false,
+  "drawer": {
+    "type": "DrawTurret",
+    "parts": [
+      {
+        "type": "RegionPart",
+        "suffix": "-side", 
+        "layer": 49
+        "moveY": 5, 
+	"outline": false
+        "moveX": 0, 
+        "mirror": true, 
+        "progress": "recoil", 
+      },
+	  {
+        "type": "RegionPart",
+        "suffix": "-eye", 
+        "layer": 49
+        "moveY": -2, 
+	"outline": false
+        "moveX": 0, 
+        "mirror": true, 
+        "progress": "recoil", 
+      },
+	  	  {
+        "type": "RegionPart",
+        "suffix": "-body", 
+        "layer": 50
+        "moveY": 0, 
+	"outline": false
+        "moveX": 0, 
+        "mirror": false, 
+        "progress": "recoil", 
+      }
+    ]
+  },
+  "shootType": {
+    "type": "ContinuousLaserBulletType",
+    "damage": 500,
+    "torchEffect": "artilleryTrailSmoke"
+    "length": 600,
+    "flareWidth": 15,
+    "flareLength": 15,
+    "makeFire": true,
+    "flareColor": "ffffff",
+    "makeFire": true
+    "layer": 49.9
+    "width": 20,
+    "backLength": 20,
+    "lifetime": 60, 
+    "pierce": true,
+    "hitEffect": "pulverize",
+    "despawnEffect": ["pulverize", "artilleryTrailSmoke"]
+    "fadeTime": 180
+    "shake": 0.5
+    "status": "melting", 
+    "statusDuration": 60, 
+    "hitSize": 6,
+    "collidesAir": true,
+    "collidesGround": true
+   }
+  "maxAmmo": 10, // Maximum ammo the turret can hold
+  "ammoPerShot": 1, // Ammo used per shot
+
+  // Targeting
+  "targetGround": true, // Can target ground units
+  "targetAir": false, // Can target air units
+  
+  // Consumption
+  "consumes": {
+	  "power": 8.5,
+	  "coolant": {
+		  "amount": 0.5
+	  }
+  }
+
+  // Sounds
+  "shootSound": plasmaboom", // Sound played when firing
+  "loopSound": "torch", // Sound played WHILE firing
+  "loopSoundVolume": 0.5,
+
+  // Build and research
+  "category": "turret", // Category in the build menu
+  "requirements": [ // Materials required to build the turret
+    "copper/35"
+  ],
+  "buildCostMultiplier": 1, // Adjusts cost for scaling
+  "research": null, // Unlock requirements in the tech tree
+  "recoilAmount": 0.5, // Amount of visual recoil when firing
+  "restitution": 0.1 // Turret return to position speed
+}

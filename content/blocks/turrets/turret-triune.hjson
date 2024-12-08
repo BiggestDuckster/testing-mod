@@ -1,0 +1,114 @@
+{
+  // Basic information
+  "type": "ItemTurret", // Default turret type (change to PowerTurret, LiquidTurret, etc., as needed)
+  "name": "Triune",
+  "description": "Basic turret that fires three bullets continuously. Effective at dispatching groups",
+  
+  // Turret stats
+  "size": 2, // Size in tiles (1x1 by default)
+  "health": 600, // Turret health
+  "range": 240, // Range in units (default 8 per block, so 8 blocks = 64)
+  "reload": 30, // Reload time in ticks (1 second = 60 ticks)
+  "rotateSpeed": 5, // Rotation speed of the turret
+  "recoil": 1, // Recoil when firing
+  "shake": 0, // Screen shake when firing
+  "maxAmmo": 10, // Maximum ammo the turret can hold
+  "consumes": {
+  "coolant": {
+    "amount": 0.1
+    }
+  },
+  "inaccuracy": 2.5
+  "shoot": {
+    "type": "ShootBarrel",
+    "shots": 3,
+    "shotDelay": 5, 
+    "barrels": [ 
+      -4, 0, 0,  // Left barrel
+       4, 0, 0,   // Right barrel
+       0, 0, 0 // Middile barrel
+    ],
+    "barrelOffset": 0 // Start from the first barrel
+}
+
+  // Ammo system
+  "ammoTypes": {
+    "copper": {
+      "type": "BasicBulletType", // Default bullet type
+      "speed": 8, // Bullet speed
+      "damage": 10, // Damage dealt per shot
+      "lifetime": 60, // Time bullet exists in ticks (range is determined by this)
+      "hitEffect": "pulverize", // Effect triggered on hit
+      "trailEffect": "none", // Trail effect (none by default)
+      "trailColor": "#ffffff", // Trail color (white)
+	  "ammoPerShot": 3,
+      "status": "none", // Status effect applied to enemies (none by default)
+      "statusDuration": 0 // Duration of the status effect (in ticks)
+    },
+	 "lead": {
+      "type": "BasicBulletType", // Default bullet type
+      "speed": 8, // Bullet speed
+      "damage": 12, // Damage dealt per shot
+      "lifetime": 60, // Time bullet exists in ticks (range is determined by this)
+      "hitEffect": "pulverize", // Effect triggered on hit
+      "trailEffect": "none", // Trail effect (none by default)
+      "trailColor": "#ffffff", // Trail color (white)
+	  "ammoPerShot": 3,
+	  "reloadMultiplier": 1.05
+      "status": "none", // Status effect applied to enemies (none by default)
+      "statusDuration": 0 // Duration of the status effect (in ticks)
+    },
+    "graphite": {
+	  "type": "BasicBulletType", // Default bullet type
+      "speed": 8, // Bullet speed
+      "damage": 20, // Damage dealt per shot
+      "lifetime": 60, // Time bullet exists in ticks (range is determined by this)
+      "hitEffect": "pulverize", // Effect triggered on hit
+      "trailEffect": "none", // Trail effect (none by default)
+      "trailColor": "#ffffff", // Trail color (white)
+	  "ammoPerShot": 5,
+	  "reloadMultiplier": 0.55
+      "status": "none", // Status effect applied to enemies (none by default)
+      "statusDuration": 0 // Duration of the status effect (in ticks)
+	  "ammoMultiplier": 4
+	},
+	 "silicon": {
+	  "type": "BasicBulletType", // Default bullet type
+      "speed": 8, // Bullet speed
+      "damage": 22, // Damage dealt per shot
+      "lifetime": 60, // Time bullet exists in ticks (range is determined by this)
+      "hitEffect": "pulverize", // Effect triggered on hit
+      "trailEffect": "none", // Trail effect (none by default)
+      "trailColor": "#ffffff", // Trail color (white)
+	  "ammoPerShot": 6,
+	  "reloadMultiplier": 1.25
+	  "homingPower": 0.1
+      "status": "none", // Status effect applied to enemies (none by default)
+      "statusDuration": 0 // Duration of the status effect (in ticks)
+	  "ammoMultiplier": 8
+	},
+}
+
+  // Targeting
+  "targetGround": true, // Can target ground units
+  "targetAir": true, // Can target air units
+
+  // Build and research
+  "category": "turret", // Category in the build menu
+  "requirements": [ // Materials required to build the turret
+    "copper/70"
+	"lead/20"
+  ],
+  "buildCostMultiplier": 1, // Adjusts cost for scaling
+  "research": null, // Unlock requirements in the tech tree
+
+  // Visual
+  "glow": {
+    "enabled": false, // Set to true to enable glow
+    "color": "#ffffff", // Glow color
+    "intensity": 0.5, // Glow intensity (0 to 1)
+    "size": 1 // Glow size
+  },
+  "recoilAmount": 0.5, // Amount of visual recoil when firing
+  "restitution": 0.1 // Turret return to position speed
+}

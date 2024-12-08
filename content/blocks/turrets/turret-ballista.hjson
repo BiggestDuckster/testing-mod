@@ -1,0 +1,85 @@
+{
+  "type": "ItemTurret",
+  "name": "Ballista",
+  "description": "Fires a large bolt through far ranges.",
+  "size": 4,
+  "health": 2000,
+  "range": 1200,
+  "reload": 210,
+  "recoil": 5,
+  "shake": 1,
+  "consumes": {
+    "coolant": {
+      "amount": 0.08
+    }
+  },
+  "rotateSpeed": 1.8,
+  "ammoTypes": {
+    "thorium": {
+      "type": "bullet",
+      "damage": 500,
+      "speed": 20,
+      "pierce": false,
+      "collidesTiles": true,
+      "hitEffect": ["flakExplosionBig", "explosion", "fireballsmoke", "massiveExplosion", "bigShockwave"],
+      "trailEffect": "trailFade",
+      "trailSpacing": 20,
+      "hitSound": "largeExplosion",
+      "splashDamage": 300,
+      "splashDamageRadius": 48,
+      "lifetime": 200,
+      "width": 10,
+      "height": 100,
+      "smokeEffect": ["instBomb", "blastsmoke", "blastExplosion"]
+    },
+    "titanium": {
+      "type": "bullet",
+      "damage": 300,
+      "speed": 40,
+      "pierce": false,
+      "collidesTiles": true,
+      "hitEffect": ["flakExplosionBig", "explosion", "fireballsmoke", "massiveExplosion", "bigShockwave"],
+      "trailEffect": "trailFade",
+      "trailSpacing": 20,
+      "hitSound": "largeExplosion",
+      "splashDamage": 100,
+      "splashDamageRadius": 40,
+      "lifetime": 300,
+      "width": 10,
+      "height": 100,
+      "smokeEffect": ["instBomb", "blastsmoke", "blastExplosion"]
+    },
+    "surge-alloy": {
+      "type": "bullet",
+      "damage": 500,
+      "speed": 20,
+      "pierce": true,
+      "collidesTiles": true,
+      "hitEffect": ["flakExplosionBig", "explosion", "fireballsmoke", "massiveExplosion", "bigShockwave"],
+      "trailEffect": "trailFade",
+      "trailSpacing": 20,
+      "hitSound": "largeExplosion",
+      "reloadMultiplier": 0.45,
+      "lifetime": 200,
+      "width": 10,
+      "height": 100,
+      "smokeEffect": ["instBomb", "blastsmoke", "blastExplosion"]
+    }
+  },
+  "targetGround": true,
+  "targetAir": false,
+  "maxAmmo": 2,
+  "ammoPerShot": 1,
+  "recoilAmount": 15,
+  "restitution": 0.2,
+  "shootSound": "laserbig",
+  "category": "turret",
+  "research": "ballista",
+  "requirements": [
+    "lead/300",
+    "silicon/150",
+    "thorium/200",
+    "titanium/250",
+    "surge-alloy/200"
+  ]
+}

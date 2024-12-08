@@ -1,0 +1,88 @@
+{
+  // Basic information
+  "type": "ItemTurret",
+  "squareSprite": false,
+  "name": "Influx",
+  "rotateSpeed": 1.5
+  "description": "Fires 10 bullets that burn on impact.",
+  
+  // Turret stats
+  "size": 4,
+  "heatColor": "#ffec87FF",
+  "health": 2200,
+  "range": 240,
+  "shoot": {
+    "type": "shootSpread",
+    "shots": 10,
+    "spread": 7
+  },
+"drawer": {
+    "type": "DrawTurret",
+    "parts": [
+      {
+        "type": "RegionPart",
+        "suffix": "-side", 
+        "moveY": -2, 
+        "moveRot": -20, 
+        "mirror": true, 
+        "progress": "recoil", 
+      }
+    ]
+  },
+  "reload": 95,
+  "rotateSpeed": 5,
+  "recoil": 10,
+  "shake": 1,
+
+  // Ammo system
+  "ammoTypes": {
+    "blast-compound": {
+      "type": ["BasicBulletType", "bigShockwave"],
+      "speed": 4,
+      "damage": 100,
+      "lifetime": 120,
+      "hitEffect": ["blastsmoke", "pulverizeMedium"],
+      "trailEffect": "colorTrail",
+      "trailColor": "#f30d0d",
+      "status": "melting",
+      "statusDuration": 120,
+      "height": 20,
+      "smokeEffect": ["instBomb", "bigShockwave"],
+      "knockback": 1,
+      "homingPower": 0.05,
+      "homingRange": 5,
+      "homingDelay": 10,
+      "lightOpacity": 0.5
+    }
+  },
+  "maxAmmo": 10,
+  "ammoPerShot": 5,
+
+  // Targeting
+  "targetGround": true,
+  "targetAir": true,
+
+  // Sounds
+  "shootSound": "shotgun",
+  "hitSound": "plasticExplosion",
+
+  // Build and research
+  "category": "turret",
+  "requirements": [
+    "copper/300",
+    "lead/400",
+    "plastanium/100"
+  ],
+  "buildCostMultiplier": 1,
+  "research": influx,
+
+  // Visual
+  "glow": {
+    "enabled": true,
+    "color": "#f30d0d",
+    "intensity": 0.5,
+    "size": 1
+  },
+  "recoilAmount": 0.5,
+  "restitution": 0.1
+}

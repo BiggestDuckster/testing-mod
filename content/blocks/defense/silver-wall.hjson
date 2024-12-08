@@ -1,0 +1,13 @@
+{
+  name: "Silver Wall"
+  type: Wall
+  health: 420
+  requirements: [
+    silver/6
+  ]
+  size: 1
+  category: defense
+  buildCostMultiplier: 4
+  description: "Wall made of silver"
+}
+

@@ -1,0 +1,108 @@
+{
+  // Basic information
+  "type": "ItemTurret", // Default turret type (change to PowerTurret, LiquidTurret, etc., as needed)
+  "name": "Armageddon",
+  "description": "Launches a giant nuclear shell that detonates on impact. Extremely deadly.",
+  
+  // Turret stats
+  "size": 6, // Size in tiles (1x1 by default)
+  "health": 9000, // Turret health
+  "range": 1600, // Range in units (default 8 per block, so 8 blocks = 64)
+  "reload": 480, // Reload time in ticks (1 second = 60 ticks)
+  "rotateSpeed": 1, // Rotation speed of the turret
+  "recoil": 15, // Recoil when firing
+  "shake": 30, // Screen shake when firing
+  "heatColor": "#ffa5a5FF",
+  "layer": 50
+  "heatLayer": 50.01
+  "cooldownTime": 30
+  "unitSort": "strongest"
+  "drawer": {
+    "type": "DrawTurret",
+    "parts": [
+      {
+        "type": "RegionPart",
+        "suffix": "-side", 
+        "layer": 50.1
+        "heatColor": "#ffa5a5FF",
+        "heatLayer": 50.15
+        "moveY": -1, 
+        "moveRot": -15, 
+        "mirror": true, 
+        "progress": "recoil", 
+      }
+    ]
+  },
+
+  // Ammo system
+  "ammoTypes": {
+    "ragnarite": {
+      "type": "BasicBulletType", // Default bullet type
+      "speed": 4, // Bullet speed
+      "damage": 5000, // Damage dealt per shot
+	  "splashDamage": 2000
+	  "hitSound": "armaExplode", // Sound played when bullet hits a target
+      "despawnSound": "armaExplode",
+      "hitSoundVolume": 10,
+	  "splashDamageRadius": 400
+      "lifetime": 720, // Time bullet exists in ticks (range is determined by this)
+      "hitEffect": ["impactReactorExplosion","instBomb", "bigShockwave", "dynamicWave"], // Effect triggered on hit
+	  "despawnEffect": ["impactReactorExplosion","instBomb", "bigShockwave", "dynamicWave"],
+      "trailEffect": ["missileTrailSmoke", "missileTrail", "incendTrail", "colorTrail"], // Trail effect (none by default)
+      "trailColor": "#ffeac8FF", // Trail color (white)
+	  "trailWidth": 4
+	  "trailLength": 30
+      "status": "burning", // Status effect applied to enemies (none by default)
+      "statusDuration": 360, // Duration of the status effect (in ticks)
+	  "smokeEffect": ["instHit", "fireballsmoke", "instBomb"],
+	  "width": 50,
+	  "height": 50,
+	  "impact": true,
+	  "knockback": 50,
+	  "hitShake": 50,
+	  "lightOpacity": 0.2,
+	  "lightRadius": 10,
+	  "LightColor": "#ffeac8FF"
+    }
+  },
+  "maxAmmo": 10, // Maximum ammo the turret can hold
+  "ammoPerShot": 1, // Ammo used per shot
+
+  // Targeting
+  "targetGround": true, // Can target ground units
+  "targetAir": false, // Can target air units
+
+  // Power consumption (for PowerTurrets)
+  "consumePower": 0, // Power used per second (set to 0 if not applicable)
+
+  // Liquid consumption (for LiquidTurrets)
+  "consumeLiquid": null, // Specify liquid type and amount if needed
+
+  // Sounds
+  "shootSound": "armaShoot", // Sound played when firing
+
+  // Build and research
+  "category": "turret", // Category in the build menu
+  "requirements": [ // Materials required to build the turret
+	"copper/1000",
+	"lead/1000",
+	"silicon/800",
+	"graphite/960",
+	"plastanium/500",
+	"surge-alloy/150",
+	"thorium/500"
+  ],
+  "buildCostMultiplier": 1, // Adjusts cost for scaling
+  "research": null, // Unlock requirements in the tech tree
+
+  // Visual
+  "recoilPow": 2
+  "glow": {
+    "enabled": true, // Set to true to enable glow
+    "color": "#ffeac8FF", // Glow color
+    "intensity": 0.8, // Glow intensity (0 to 1)
+    "size": 1 // Glow size
+  },
+  "recoilAmount": 5, // Amount of visual recoil when firing
+  "restitution": 0.1 // Turret return to position speed
+}

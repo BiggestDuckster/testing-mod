@@ -1,0 +1,16 @@
+{
+  name: "Lead Wall"
+  type: Wall
+  health: 300
+  requirements: [
+    lead/6
+  ]
+  size: 1
+  category: defense
+  buildCostMultiplier: 4
+  description: "Wall made from lead. Slightly weaker than copper walls"
+}
+
+
+
+

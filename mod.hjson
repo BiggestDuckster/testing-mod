@@ -1,0 +1,11 @@
+{
+  "name": "testing",
+  "author": "ULRICH",
+  "description": "testing stuff",
+  "version": "1.0",
+  "minGameVersion": 136,
+  "content": [
+    "lead-wall.hjson, defender-wall.hjson, item-silver.hjson"
+  ]
+}
+

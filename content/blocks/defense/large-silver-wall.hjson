@@ -1,0 +1,13 @@
+{
+  name: "Large Silver Wall"
+  type: Wall
+  health: 1680
+  requirements: [
+    silver/24
+  ]
+  size: 2
+  category: defense
+  buildCostMultiplier: 5
+  description: "Larger wall made of silver"
+}
+

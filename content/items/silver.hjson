@@ -1,0 +1,8 @@
+    name: "Silver"
+    hardness: 3
+    cost: 2
+    color: "aaaaaa" // Hex color code for visualization
+    flammability: 0
+    explosiveness: 0
+    radioactivity: 0.0
+    description: "Very flexible material, can be used as conductors for heat, electricity, and other alternative to lead."

@@ -1,0 +1,98 @@
+{
+    // Info and general turret
+    "type": "ItemTurret",
+    "name": "Hermes",
+    "description": "Shoots neon bullets that electrocute, frag on hit, and apply shock.",
+    "size": 3,
+    "heatColor": "A9D8FFFF",
+    "health": 1100,
+    "range": 320, // 40 blocks (40 * 8 = 320)
+    "reload": 20, // 1-second reload time
+    "smokeEffect": ["colorSparkBig", "lightning", "lightningShoot"]
+
+    // Power consumption
+    "consumes": {
+         "power": 2.5
+}
+
+    // Sounds
+    "hitSound": "chainLightning",
+    "shootSound": "testingLaser2",
+    "soundPitchMin": 1.2,
+    "soundPitchMax": 1.5,
+    "chargeSound": "testingLaser"	
+
+    // Visual
+    "recoil": 0.5,
+    "shake": 0,
+    "rotateSpeed": 3,
+
+    // Ammo and bullets
+    "ammoTypes": {
+        "nitensium": {
+            "type": "BasicBulletType",
+            "speed": 5, // Bullet speed
+            "damage": 60,
+            "lifetime": 320, // Determines range
+            "status": "shocked", // Applies shock effect
+            "statusDuration": 120, // Shock duration (2 seconds)
+            "fragBullets": 10,
+
+            // Visual and effects
+            "hitEffect": ["chainEmp", "colorSparkBig", "bigShockwave"]
+            "trailColor": "#00bcff",
+            "trailEffect": "colorTrail",
+            "trailLength": 8,
+            "trailWidth": 2,
+
+            // Lightning effects
+            "lightning": 6,
+            "lightningLength": 4,
+            "lightningCone": 360,
+            "lightningDamage": 30,
+
+            // Fragmentation settings
+            "fragBullets": 4, // Number of fragments
+            "fragBullet": {
+                "type": "BasicBulletType",
+                "speed": 4, // Slower fragments
+                "damage": 15, // Lower damage
+                "lifetime": 160, // Half the range of the main bullet
+                "status": "shocked", // Fragments also apply shock
+                "statusDuration": 60, // Shock duration for fragments (1 second)
+
+                // Fragment visuals
+                "hitEffect": "chainEmp",
+                "trailColor": "#00bcff",
+                "trailEffect": "colorTrail",
+                "trailLength": 6,
+                "trailWidth": 1,
+
+                // Lightning effects for fragments
+                "lightning": 4,
+                "lightningLength": 3,
+                "lightningCone": 360,
+                "lightningDamage": 15
+            }
+        }
+    },
+
+    // Targeting behavior
+    "targetGround": true,
+    "targetAir": true,
+
+    // Ammo management
+    "maxAmmo": 10,
+    "ammoPerShot": 1,
+    "reloadTime": 20,
+
+    // Build and category
+    "category": "turret",
+    "requirements": [
+        "titanium/150",
+        "graphite/100",
+        "copper/75",
+        "silicon/50"
+    ],
+    "research": "hermes"
+}

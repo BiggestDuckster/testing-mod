@@ -1,0 +1,9 @@
+{
+  "temperature": 2,
+  "viscosity": 0.6,
+  "gas": true,
+  "lightColor": "#ade6ffFF",
+  "effect": "melting",
+  "color": "#ade6ffFF",
+  "research": "niten-gas"
+}

@@ -1,0 +1,80 @@
+ // JSON TURRET TEMPLATE BY BIG DUCKY, BETTER IF ACCESSED IN NOTEPAD++
+{
+  "type": "ItemTurret", // Type of turret.
+  "name": "Turret", // Name of your turret.
+  "description": "A nice turret.", // This is the description.
+  
+  // Basic Stats
+  "size": 3, // Turret size in tiles.
+  "health": 1500, // Turret health.
+  "range": 160, // Maximum shooting range (8 = 1 tile).
+  "reload": 60, // Time between shots (in ticks, so 1 second = 60).
+  "rotateSpeed": 5, // Speed at which the turret rotates.
+  "recoil": 2, // Recoil distance when firing.
+  "shake": 0, // Camera shake when firing.
+
+  // Ammo System
+  "ammoTypes": {
+    "copper": { // Ammo used.
+	
+	  // Stats
+      "type": "bullet", // Bullet type.
+      "damage": 10, // Self explanatory.
+      "speed": 1, // Speed of your bullet (in ticks).
+      "lifetime": 60, // How long the bullet lasts (in ticks).
+	  "makeFire": false, // If this bullet will make fire on impact.
+	  "status": "none" // Status given to foe when hit.
+	  "statusDuration": // How long this status lasts (in ticks).
+	  
+	  // Pierce Settings (This can be removed if you want)
+	  "Pierce": false, // Whether this bullet pierces.
+	  "pierceBuilding": false, // If this bullet will pierce buildings.
+	  "pierceCap": -1, // Maximum amount of pierced objects before ending (-1 means none).
+	  "pierceDamageFactor": 0, // Damaged decreased everytime this bullet pierces.
+	  
+	  // Sounds
+	  "hitSound": "none", // Sound made when hitting a target
+	  "despawnSound": "none", // Sound made when lifetime is over
+	  
+	  // Visual
+      "width": 5, // Width of bullet.
+      "height": 7, // Height of bullet.
+      "hitEffect": "hitBulletSmall", // Effect when target is hit.
+	  "shake": 0, // Shake when bullet hits.
+	  "despawnEffect": "hitBulletSmall", // Effect when bullet lifetime ends.
+	  "smokeEffect": "shootSmallSmoke", // Smoke effect when shot.
+	  "shootEffect": "shootSmall" // Effect when shooting
+	  
+	  // Miscellaneous
+	  "laserAbsorb": false, // If this bullet gets absorbed by plastanium walls.
+	  "hittable": true, // If this bullet can be hit by point defense.
+	  "reflectable": true // If this bullet will be reflected by walls like phase wall.
+	  "absorbable": true // If this bullet will be absorbed by shields.
+	  "inaccuracy": 0, // Inaccuracy of this turret (in degrees).
+	  "knockback": 0 // Knockback in velocity.
+    }
+  },
+  "maxAmmo": 20, // Maximum ammo stored.
+  "ammoPerShot": 1, // Ammo used per shot.
+
+  // Targeting
+  "targetGround": true, // Can target ground units.
+  "targetAir": false, // Can target air units.
+
+  // Consumption
+  "consumes":{
+	  "power": 1.5 // (60 = 1 power) 1.5 = 90 power.
+	  "booster": { // If it uses cryofluid and water as boosters.
+		  "amount": 0.1 // default amount.
+	  },
+  },
+
+  // Build and Research
+  "category": "turret", // Dont change this.
+  "requirements": [ // Required items needed to build this turret.
+    "lead/100",
+    "graphite/75",
+    "silicon/50"
+  ],
+  "research": "null" // Object needed to be researched in the tech tree before being unlockable
+}

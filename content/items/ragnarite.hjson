@@ -1,0 +1,8 @@
+    name: "Ragnarite"
+    hardness: 4
+    cost: 2
+    color: "fff900" // Hex color code for visualization
+    flammability: 0
+    explosiveness: 0
+    radioactivity: 0.0
+    description: "A precious metal forged by combining silver and copper. Excellent for advanced structures and conductors."

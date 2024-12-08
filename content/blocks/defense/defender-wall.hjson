@@ -1,0 +1,13 @@
+{
+  name: "Defender Wall"
+  type: Wall
+  health: 450
+  requirements: [
+    lead/20, copper/10
+  ]
+  size: 1
+  category: defense
+  buildCostMultiplier: 4.5
+  description: "Sturdy wall made from common materials"
+}
+
