@@ -1,0 +1,110 @@
+ {
+  "type": "ItemTurret", // Type of turret.
+  "name": "Gaurd Turret", // Name of your turret.
+  "description": "A small turret meant to gaurd walls. Flexible with many ammo types.", // This is the description.
+  
+  // Basic Stats
+  "size": 2, // Turret size in tiles.
+  "health": 700, // Turret health.
+  "range": 400, // Maximum shooting range (8 = 1 tile).
+  "reload": 10, // Time between shots (in ticks, so 1 second = 60).
+  "rotateSpeed": 5, // Speed at which the turret rotates.
+  "recoil": 1, // Recoil distance when firing.
+  "shake": 0, // Camera shake when firing.
+  "inaccuracy": 1.5
+  "ammoEjectBack": 1
+  "ammoEject": true
+  
+  // Drawer
+  "drawer": {
+  "type": "DrawTurret",
+  "basePrefix": "mini-",
+  "parts": [
+      {
+        "type": "RegionPart",
+        "suffix": "-barrel", 
+        "layer": 50
+        "moveY": -2, 
+        "moveX": 0, 
+        "mirror": false, 
+        "progress": "recoil", 
+      }
+    ]
+  },
+
+  // Ammo System
+  "ammoTypes": {
+    "copper": { // Ammo used.
+	  // Stats
+      "type": "bullet", // Bullet type.
+      "damage": 6, // Self explanatory.
+      "speed": 5, // Speed of your bullet (in ticks).
+      "lifetime": 100, // How long the bullet lasts (in ticks).
+	  "makeFire": false, // If this bullet will make fire on impact.
+	  
+	  // Sounds
+	  "hitSound": "pow", // Sound made when hitting a target
+	  "despawnSound": "pow", // Sound made when lifetime is over
+	  
+	  // Visual
+      "width": 5, // Width of bullet.
+      "height": 5, // Height of bullet.
+	  "lightColor": "d99d73",
+	  "trailColor": "d99d73",
+	  "trailEffect": "colorTrail",
+	  "shootColor": "d99d73",
+      "hitEffect": "hitBulletSmall", // Effect when target is hit.
+	  "shake": 0, // Shake when bullet hits.
+	  "despawnEffect": "hitBulletSmall", // Effect when bullet lifetime ends.
+	  "smokeEffect": "shootSmallSmoke", // Smoke effect when shot.
+	  "shootEffect": "shootSmall" // Effect when shooting
+    },
+	"lead": { // Ammo used.
+	  // Stats
+      "type": "bullet", // Bullet type.
+      "damage": 3, // Self explanatory.
+      "speed": 5, // Speed of your bullet (in ticks).
+      "lifetime": 100, // How long the bullet lasts (in ticks).
+	  "makeFire": false, // If this bullet will make fire on impact.
+	  "status": "shocked",
+	  "statusDuration": 30,
+	  
+	  // Sounds
+	  "hitSound": "spark", // Sound made when hitting a target
+	  "despawnSound": "spark", // Sound made when lifetime is over
+	  
+	  // Visual
+      "width": 5, // Width of bullet.
+      "height": 5, // Height of bullet.
+	  "lightColor": "8c7fa9",
+	  "trailColor": "8c7fa9",
+	  "trailEffect": "colorTrail",
+	  "shootColor": "8c7fa9",
+      "hitEffect": ["electrified", "hitBulletSmall"], // Effect when target is hit.
+	  "despawnEffect": ["electrified", "hitBulletSmall"], // Effect when bullet lifetime ends.
+	  "smokeEffect": "shootSmallSmoke", // Smoke effect when shot.
+	  "shootEffect": "shootSmall" // Effect when shooting
+    }
+  },
+  "maxAmmo": 20, // Maximum ammo stored.
+  "ammoPerShot": 1, // Ammo used per shot.
+
+  // Targeting
+  "targetGround": true, // Can target ground units.
+  "targetAir": true, // Can target air units.
+  
+  // Consumption
+  "consumes": {
+	  "coolant": {
+		  "amount": 0.1
+	  }
+  }
+  
+  // Build and Research
+  "category": "turret", // Dont change this.
+  "requirements": [ // Required items needed to build this turret.
+    "copper/75",
+	"silicon/100"
+  ],
+  "research": "null" // Object needed to be researched in the tech tree before being unlockable
+}

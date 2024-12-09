@@ -1,0 +1,172 @@
+{
+  "type": "ItemTurret", // Type of turret.
+  "name": "Chixculub", // Name of your turret.
+  "description": "Shoots a bomb that frags into multiple bullets. Best in groups.", // This is the description.
+  
+  // Basic Stats
+  "size": 3, // Turret size in tiles.
+  "health": 1500, // Turret health.
+  "range": 280, // Maximum shooting range (8 = 1 tile).
+  "reload": 120, // Time between shots (in ticks, so 1 second = 60).
+  "rotateSpeed": 2, // Speed at which the turret rotates.
+  "recoil": 5, // Recoil distance when firing.
+  "shake": 1, // Camera shake when firing.
+  "heatColor": "ffaa52",
+  "cooldownTime": 100,
+  
+  // Drawer
+    "drawer": {
+    "type": "DrawTurret",
+    "parts": [
+      {
+        "type": "RegionPart",
+        "cooldownTime": 100,
+        "suffix": "-barrel", 
+        "layer": 49
+        "moveY": -2, 
+        "heatColor": "ffaa52"
+	"outline": true
+        "moveX": 0, 
+        "mirror": false, 
+        "progress": "recoil", 
+      }
+    ]
+  },
+
+
+  // Ammo System
+  "ammoTypes": {
+    "blast-compound": { // Ammo used.
+	
+	  // Stats
+      "type": "bullet", // Bullet type.
+      "damage": 50, // Self explanatory.
+      "speed": 5, // Speed of your bullet (in ticks).
+      "lifetime": 60, // How long the bullet lasts (in ticks).
+	  "makeFire": false, // If this bullet will make fire on impact.
+	  "status": "burning", // Status given to foe when hit.
+	  "statusDuration": 160, // How long this status lasts (in ticks).
+	  "splashDamage": 20,
+	  "splashDamageRadius": 80,
+	  
+	  // Sounds
+	  "hitSound": "mediumCannon", // Sound made when hitting a target
+	  "despawnSound": "mediumCannon", // Sound made when lifetime is over
+	  
+	  // Visual
+      "width": 20, // Width of bullet.
+      "height": 20, // Height of bullet.
+      "hitEffect": ["blastExplosion", "bigShockwave"], // Effect when target is hit.
+	  "shake": 0, // Shake when bullet hits.
+	  "despawnEffect": ["blastExplosion", "bigShockwave"], // Effect when bullet lifetime ends.
+	  "smokeEffect": "blastsmoke", // Smoke effect when shot.
+	  "shootEffect": "blastExplosion", // Effect when shooting
+	  
+	  // Miscellaneous
+	  "laserAbsorb": false, // If this bullet gets absorbed by plastanium walls.
+	  "hittable": true, // If this bullet can be hit by point defense.
+	  "reflectable": false, // If this bullet will be reflected by walls like phase wall.
+	  "absorbable": false, // If this bullet will be absorbed by shields.
+	  "inaccuracy": 5, // Inaccuracy of this turret (in degrees).
+	  "knockback": 2, // Knockback in velocity.
+	  
+	  // Frag Settings
+	  "fragBullet": {
+		  "type": "bullet", // Basic bullet type
+		  "fragBullets": 5, // Amount of bullets
+		  "damage": 20, // DMG
+		  "speed": 0.5, // Speed
+		  "lifetime": 60, // How long frag bullet lasts.
+		  "makeFire": false,
+		  "status": "burning",
+		  "statusDuration": 60,
+		  "splashDamage": 5,
+		  "splashDamageRadius": 40,
+		  "hitSound": "explosion",
+		  "despawnSound": "explosion",
+		  
+		  // Visuals
+		  "despawnEffect": ["shockwave", "fireHit"],
+		  "hitEffect": ["shockwave", "fireHit"]
+	  }
+    },
+	"pyratite": { // Ammo used.
+	
+	  // Stats
+      "type": "bullet", // Bullet type.
+      "damage": 25, // Self explanatory.
+      "speed": 6, // Speed of your bullet (in ticks).
+      "lifetime": 60, // How long the bullet lasts (in ticks).
+	  "makeFire": true, // If this bullet will make fire on impact.
+	  "status": "burning", // Status given to foe when hit.
+	  "statusDuration": 180, // How long this status lasts (in ticks).
+	  "splashDamage": 5,
+	  "splashDamageRadius": 40,
+	  
+	  // Sounds
+	  "hitSound": "mediumCannon", // Sound made when hitting a target
+	  "despawnSound": "mediumCannon", // Sound made when lifetime is over
+	  
+	  // Visual
+      "width": 20, // Width of bullet.
+      "height": 20, // Height of bullet.
+      "hitEffect": ["blastExplosion", "bigShockwave"], // Effect when target is hit.
+	  "shake": 0, // Shake when bullet hits.
+	  "despawnEffect": ["blastExplosion", "bigShockwave"], // Effect when bullet lifetime ends.
+	  "smokeEffect": "blastsmoke", // Smoke effect when shot.
+	  "shootEffect": "blastExplosion", // Effect when shooting
+	  
+	  // Miscellaneous
+	  "laserAbsorb": false, // If this bullet gets absorbed by plastanium walls.
+	  "hittable": true, // If this bullet can be hit by point defense.
+	  "reflectable": false, // If this bullet will be reflected by walls like phase wall.
+	  "absorbable": false, // If this bullet will be absorbed by shields.
+	  "inaccuracy": 7, // Inaccuracy of this turret (in degrees).
+	  "knockback": 1, // Knockback in velocity.
+	  
+	  // Frag Settings
+	  "fragBullet": {
+		  "type": "bullet", // Basic bullet type
+		  "fragBullets": 2.2, // Amount of bullets
+		  "damage": 10, // DMG
+		  "speed": 0.5, // Speed
+		  "lifetime": 60, // How long frag bullet lasts.
+		  "makeFire": true,
+		  "status": "burning",
+		  "statusDuration": 120,
+		  "splashDamage": 5,
+		  "splashDamageRadius": 20,
+		  "hitSound": "explosion",
+		  "despawnSound": "explosion",
+		  
+		  // Visuals
+		  "despawnEffect": ["shockwave", "fireHit"],
+		  "hitEffect": ["shockwave", "fireHit"]
+	  }
+    }
+  },
+  "maxAmmo": 20, // Maximum ammo stored.
+  "ammoPerShot": 1, // Ammo used per shot.
+  
+  // Consumption
+  "consumes": {
+	  "coolant": {
+		  "amount": 0.2,
+	  }
+  },
+
+  // Targeting
+  "targetGround": true, // Can target ground units.
+  "targetAir": false, // Can target air units.
+
+  // Build and Research
+  "category": "turret", // Dont change this.
+  "requirements": [ // Required items needed to build this turret.
+    "lead/500",
+	"copper/250",
+	"silicon/120",
+	"graphite/100",
+	"thorium/100"
+  ],
+  "research": "chixculub" // Object needed to be researched in the tech tree before being unlockable
+}
